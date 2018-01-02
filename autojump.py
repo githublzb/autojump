@@ -40,7 +40,7 @@ def getDestPoint(img, m, n):
     if(n < w / 2):
         print("left")
         col = w - 1
-        row = int(m - (w - 1 - n) * k)
+        row = int(m - (w - 1 - n) * k) + 20
         while(img[row][col] < 10):
             img[row][col] = 255
             if count == 0:
@@ -53,7 +53,7 @@ def getDestPoint(img, m, n):
     else:
         print("right")
         col = 0
-        row = int(m - (n + 1) * k)
+        row = int(m - (n + 1) * k) + 20
         while(img[row][col] < 10):
             img[row][col] = 255
             if count == 0:
@@ -89,7 +89,7 @@ def getScreenshot():
 
 
 def jump(distance):
-    press_coefficient = 1.765
+    press_coefficient = 1.82
     press_time = distance * press_coefficient
     press_time = int(press_time)
     cmd = 'adb shell input swipe 10 10 10 10 {duration}'.format(
